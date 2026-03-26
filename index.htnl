@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Konfuzius – Mindmap</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f5f0e8;
+    font-family: 'Nunito', sans-serif;
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+  }
+  #hint {
+    position: fixed; bottom: 14px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px; color: #aaa; z-index: 10;
+    font-family: 'Nunito', sans-serif;
+  }
+  svg { width: 100vw; height: 100vh; display: block; }
+  .branch-line { stroke-width: 3; stroke-linecap: round; fill: none; opacity: 0.6; }
+  .leaf-line   { stroke-width: 2; stroke-linecap: round; fill: none; opacity: 0.4; }
+  .branch-rect { rx: 12; ry: 12; filter: drop-shadow(0 3px 8px rgba(0,0,0,0.18)); }
+  .branch-lbl  { font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; text-anchor:middle; dominant-baseline:central; fill:white; }
+  .branch-sub  { font-family:'Nunito',sans-serif; font-weight:400; font-size:11px; text-anchor:middle; fill:rgba(255,255,255,0.8); }
+  .leaf-rect   { rx:8; ry:8; fill:white; filter:drop-shadow(0 2px 5px rgba(0,0,0,0.12)); }
+  .leaf-lbl    { font-family:'Nunito',sans-serif; font-weight:700; font-size:11.5px; text-anchor:middle; fill:#444; }
+  .center-bg   { filter: drop-shadow(0 5px 15px rgba(0,0,0,0.25)); }
+  .center-lbl  { font-family:'Nunito',sans-serif; font-weight:800; font-size:21px; text-anchor:middle; dominant-baseline:central; fill:white; }
+  .center-sub  { font-family:'Nunito',sans-serif; font-size:12px; text-anchor:middle; fill:#ccc; }
+</style>
+</head>
+<body>
+<div id="hint">Scroll zum Zoomen &nbsp;·&nbsp; Ziehen zum Verschieben</div>
+
+<svg id="svg" viewBox="0 0 1100 740">
+<g id="world">
+
+<!-- ===== LINES ===== -->
+<!-- Leben (blau) top-left -->
+<line class="branch-line" x1="550" y1="370" x2="220" y2="175" stroke="#4a90d9"/>
+<line class="leaf-line"   x1="220" y1="175" x2="75"  y2="85"  stroke="#4a90d9"/>
+<line class="leaf-line"   x1="220" y1="175" x2="65"  y2="210" stroke="#4a90d9"/>
+<line class="leaf-line"   x1="220" y1="175" x2="130" y2="320" stroke="#4a90d9"/>
+
+<!-- Lehre (rot) top-right -->
+<line class="branch-line" x1="550" y1="370" x2="830" y2="160" stroke="#e05a5a"/>
+<line class="leaf-line"   x1="830" y1="160" x2="900" y2="55"  stroke="#e05a5a"/>
+<line class="leaf-line"   x1="830" y1="160" x2="990" y2="155" stroke="#e05a5a"/>
+<line class="leaf-line"   x1="830" y1="160" x2="970" y2="280" stroke="#e05a5a"/>
+
+<!-- Bildung (grün) right -->
+<line class="branch-line" x1="550" y1="370" x2="870" y2="420" stroke="#4caf7d"/>
+<line class="leaf-line"   x1="870" y1="420" x2="1010" y2="365" stroke="#4caf7d"/>
+<line class="leaf-line"   x1="870" y1="420" x2="1010" y2="465" stroke="#4caf7d"/>
+
+<!-- Erbe (lila) bottom-right -->
+<line class="branch-line" x1="550" y1="370" x2="720" y2="590" stroke="#9b59b6"/>
+<line class="leaf-line"   x1="720" y1="590" x2="870" y2="625" stroke="#9b59b6"/>
+<line class="leaf-line"   x1="720" y1="590" x2="800" y2="680" stroke="#9b59b6"/>
+
+<!-- Politik (orange) bottom-left -->
+<line class="branch-line" x1="550" y1="370" x2="340" y2="590" stroke="#e88c30"/>
+<line class="leaf-line"   x1="340" y1="590" x2="190" y2="625" stroke="#e88c30"/>
+<line class="leaf-line"   x1="340" y1="590" x2="285" y2="680" stroke="#e88c30"/>
+
+<!-- ===== BRANCH NODES ===== -->
+
+<!-- Leben -->
+<rect class="branch-rect" x="155" y="148" width="130" height="54" fill="#4a90d9"/>
+<text class="branch-lbl" x="220" y="170">Leben</text>
+<text class="branch-sub" x="220" y="190">551 – 479 v. Chr.</text>
+
+<!-- Lehre -->
+<rect class="branch-rect" x="765" y="133" width="130" height="54" fill="#e05a5a"/>
+<text class="branch-lbl" x="830" y="155">Kernlehre</text>
+<text class="branch-sub" x="830" y="175">Ethik &amp; Werte</text>
+
+<!-- Bildung -->
+<rect class="branch-rect" x="805" y="393" width="130" height="54" fill="#4caf7d"/>
+<text class="branch-lbl" x="870" y="415">Bildung</text>
+<text class="branch-sub" x="870" y="435">für alle Menschen</text>
+
+<!-- Erbe -->
+<rect class="branch-rect" x="655" y="563" width="130" height="54" fill="#9b59b6"/>
+<text class="branch-lbl" x="720" y="585">Erbe</text>
+<text class="branch-sub" x="720" y="605">Einfluss bis heute</text>
+
+<!-- Politik -->
+<rect class="branch-rect" x="275" y="563" width="130" height="54" fill="#e88c30"/>
+<text class="branch-lbl" x="340" y="585">Politik</text>
+<text class="branch-sub" x="340" y="605">Führung &amp; Staat</text>
+
+<!-- ===== LEAF NODES ===== -->
+
+<!-- Leben -->
+<rect class="leaf-rect" x="12" y="58" width="126" height="54"/>
+<text class="leaf-lbl" x="75" y="80">Armut &amp; früher</text>
+<text class="leaf-lbl" x="75" y="98">Tod des Vaters</text>
+
+<rect class="leaf-rect" x="5" y="183" width="122" height="54"/>
+<text class="leaf-lbl" x="66" y="205">Beamter &amp;</text>
+<text class="leaf-lbl" x="66" y="223">Justizminister</text>
+
+<rect class="leaf-rect" x="68" y="293" width="126" height="54"/>
+<text class="leaf-lbl" x="131" y="315">13 Jahre</text>
+<text class="leaf-lbl" x="131" y="333">Wanderschaft</text>
+
+<!-- Lehre -->
+<rect class="leaf-rect" x="838" y="28" width="124" height="54"/>
+<text class="leaf-lbl" x="900" y="50">仁 Ren –</text>
+<text class="leaf-lbl" x="900" y="68">Menschlichkeit</text>
+
+<rect class="leaf-rect" x="928" y="128" width="124" height="54"/>
+<text class="leaf-lbl" x="990" y="150">礼 Li –</text>
+<text class="leaf-lbl" x="990" y="168">Riten &amp; Anstand</text>
+
+<rect class="leaf-rect" x="908" y="253" width="130" height="54"/>
+<text class="leaf-lbl" x="973" y="272">Goldene Regel:</text>
+<text class="leaf-lbl" x="973" y="290">Was du nicht willst…</text>
+
+<!-- Bildung -->
+<rect class="leaf-rect" x="948" y="338" width="130" height="54"/>
+<text class="leaf-lbl" x="1013" y="360">Bildung für alle –</text>
+<text class="leaf-lbl" x="1013" y="378">egal woher</text>
+
+<rect class="leaf-rect" x="948" y="438" width="130" height="54"/>
+<text class="leaf-lbl" x="1013" y="460">Analekten –</text>
+<text class="leaf-lbl" x="1013" y="478">Schüler-Aufzeichnungen</text>
+
+<!-- Erbe -->
+<rect class="leaf-rect" x="808" y="598" width="130" height="54"/>
+<text class="leaf-lbl" x="873" y="620">Konfuzianismus =</text>
+<text class="leaf-lbl" x="873" y="638">Staatsphilosophie</text>
+
+<rect class="leaf-rect" x="738" y="653" width="130" height="54"/>
+<text class="leaf-lbl" x="803" y="675">Ideen weltweit</text>
+<text class="leaf-lbl" x="803" y="693">bis heute gültig</text>
+
+<!-- Politik -->
+<rect class="leaf-rect" x="62" y="598" width="132" height="54"/>
+<text class="leaf-lbl" x="128" y="620">Führen durch</text>
+<text class="leaf-lbl" x="128" y="638">Vorbild, nicht Zwang</text>
+
+<rect class="leaf-rect" x="160" y="653" width="130" height="54"/>
+<text class="leaf-lbl" x="225" y="675">Respekt &amp;</text>
+<text class="leaf-lbl" x="225" y="693">Familienpietät</text>
+
+<!-- ===== CENTER ===== -->
+<circle class="center-bg" cx="550" cy="370" r="75" fill="#2c2c2c"/>
+<text class="center-lbl" x="550" y="355">Konfuzius</text>
+<text class="center-sub" x="550" y="378">孔子</text>
+<text class="center-sub" x="550" y="396">551 – 479 v. Chr.</text>
+
+</g>
+</svg>
+
+<script>
+const svg = document.getElementById('svg');
+const world = document.getElementById('world');
+let vx=0, vy=0, vs=1;
+let drag=false, lx, ly;
+
+function apply() {
+  world.setAttribute('transform', `translate(${vx},${vy}) scale(${vs})`);
+}
+
+svg.addEventListener('mousedown', e => { drag=true; lx=e.clientX; ly=e.clientY; svg.style.cursor='grabbing'; });
+window.addEventListener('mouseup', () => { drag=false; svg.style.cursor='default'; });
+window.addEventListener('mousemove', e => {
+  if (!drag) return;
+  const rx = 1100/svg.clientWidth, ry = 740/svg.clientHeight;
+  vx += (e.clientX-lx)*rx; vy += (e.clientY-ly)*ry;
+  lx=e.clientX; ly=e.clientY;
+  apply();
+});
+svg.addEventListener('wheel', e => {
+  e.preventDefault();
+  vs = Math.min(3, Math.max(0.4, vs * (e.deltaY>0 ? 0.9 : 1.1)));
+  apply();
+}, {passive:false});
+</script>
+</body>
+</html>
